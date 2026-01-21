@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DBS Coding Camp | 2026</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="jumbotron">
+        <div class="jumbotron-content">
+          <h1 class="title"><> DBS Coding Camp | 2026</h1>
+          <p class="subtitle">
+            Empowering the next generation of tech innovators.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <nav>
+      <ul class="navbar">
+        <li>
+          <a class="nav-menu" href="#full-stack-developer"
+            >Full Stack Developer</a
+          >
+        </li>
+        <li><a class="nav-menu" href="#ai-engineer">AI Engineer</a></li>
+        <li><a class="nav-menu" href="#data-scientist">Data Scientist</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="content">
+        <article id="full-stack-developer">
+          <img
+            src="../assets/hero-banner-1.png"
+            alt="DBS Coding Camp Full Stack Developer"
+            class="content-image"
+          />
+          <h2 class="content-title">
+            Full Stack Developer <i data-lucide="code-xml"></i>
+          </h2>
+          <p class="content-subtitle">
+            Learn how to build complete, scalable, and production-ready web
+            applications from scratch. In this Full Stack Developer program, you
+            will master both front-end and back-end technologies, including
+            modern UI development, server-side logic, databases, and API
+            integration. You will work on real-world projects that simulate
+            industry workflows, helping you understand how different parts of a
+            web application communicate and function together.
+          </p>
+          <a
+            class="read-more-btn"
+            href="https://www.dbs.com/spark/index/id_id/site/codingcamp/index.html"
+            target="_blank"
+            >Read More</a
+          >
+        </article>
+        <article id="ai-engineer">
+          <img
+            src="../assets/hero-banner-2.jpg"
+            alt="DBS Coding Camp AI Engineer"
+            class="content-image"
+          />
+          <h2 class="content-title">
+            AI Engineer <i data-lucide="brain-circuit"></i>
+          </h2>
+          <p class="content-description">
+            Explore the fundamentals and practical applications of Artificial
+            Intelligence in this AI Engineer program. You will learn how to
+            design, build, and deploy intelligent systems using machine learning
+            concepts, data processing techniques, and AI models. This course
+            emphasizes problem-solving and real use-cases, preparing you to
+            develop smart solutions that can analyze data, recognize patterns,
+            and support decision-making processes.
+          </p>
+          <a
+            class="read-more-btn"
+            href="https://www.dbs.com/spark/index/id_id/site/codingcamp/index.html"
+            target="_blank"
+            >Read More</a
+          >
+        </article>
+        <article id="data-scientist">
+          <img
+            src="../assets/hero-banner-3.jpg"
+            alt="DBS Coding Camp Data Scientist"
+            class="content-image"
+          />
+          <h2 class="content-title">
+            Data Scientist <i data-lucide="database-zap"></i>
+          </h2>
+          <p class="content-description">
+            Develop the skills needed to turn raw data into valuable insights in
+            the Data Scientist program. You will learn how to collect, clean,
+            analyze, and visualize data using statistical methods and
+            data-driven approaches. Through hands-on projects, you will gain
+            experience in interpreting trends, building predictive models, and
+            communicating results effectively to support business and technology
+            decisions.
+          </p>
+          <a
+            class="read-more-btn"
+            href="https://www.dbs.com/spark/index/id_id/site/codingcamp/index.html"
+            target="_blank"
+            >Read More</a
+          >
+        </article>
+      </div>
+
+      <aside>
+        <div class="profile-card">
+          <img
+            src="../assets/dk-profile.jpg"
+            alt="Profile"
+            class="profile-avatar"
+          />
+          <h3 class="profile-name">Andika Satrio N.</h3>
+          <q class="profile-bio">Passionate Coder</q>
+          <ul class="profile-description">
+            <li><i data-lucide="id-card"></i> CFS-08</li>
+            <li><i data-lucide="university"></i> Wiyata Krida Manggala</li>
+            <li>
+              <i data-lucide="square-code"></i> Software Engineering Program
+            </li>
+            <li>
+              <i data-lucide="contact-round"></i>
+              <a
+                href="https://www.dicoding.com/users/andkstrr/academies"
+                target="_blank"
+              >
+                Profile Dicoding</a
+              >
+            </li>
+          </ul>
+          <a
+            class="read-more-btn reach-me-btn"
+            href="https://www.linkedin.com/in/andkstrr/"
+            target="_blank"
+            >Reach Me</a
+          >
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p class="footer-text">
+        &copy; <span id="year"></span>
+        <a
+          href="https://www.dbs.com/spark/index/id_id/site/codingcamp/index.html"
+          style="color: white; text-underline-offset: 5px"
+          >DBS Coding Camp.</a
+        >
+        All rights reserved.
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      const year = new Date().getFullYear();
+      document.getElementById("year").textContent = year;
+
+      // Detect active section on scroll
+      const navMenus = document.querySelectorAll(".nav-menu");
+      const sections = document.querySelectorAll("article");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (window.pageYOffset >= sectionTop - 150) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navMenus.forEach((menu) => {
+          menu.classList.remove("active");
+          if (menu.getAttribute("href") === "#" + current) {
+            menu.classList.add("active");
+          }
+        });
+      });
+
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
